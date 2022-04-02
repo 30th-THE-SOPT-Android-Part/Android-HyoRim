@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Android-HyoRim-30th</string>
+    <string name="SOPT">SOPT</string>
+    <string name="id">아이디</string>
+    <string name="hint_enter_id">아이디를 입력해주세요.</string>
+    <string name="pw">비밀번호</string>
+    <string name="hint_enter_pw">비밀번호를 입력해주세요.</string>
+    <string name="login">LOGIN</string>
 </resources>
