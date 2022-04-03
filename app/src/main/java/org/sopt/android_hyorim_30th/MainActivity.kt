@@ -1,5 +1,6 @@
 package org.sopt.android_hyorim_30th
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -13,6 +14,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLogin.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+
             Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
         }
 
