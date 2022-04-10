@@ -88,7 +88,16 @@ fun initSignUpBtnClick(view: View) {
 
 ### 3-1 DataBinding
 
+📝 **ViewBinding**
+
+View binding is a feature that allows you to more easily write code that interacts with views. Once view binding is enabled in a module, it generates a binding class for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.
+In most cases, view binding replaces findViewById.
+
+
+📝 **DataBinding**
+
 The Data Binding Library is a support library that allows you to **bind UI components in your layouts to data sources** in your app using a **declarative format rather than programmatically.** -Android Developer
+
 
 여기서 Declarative는 직역하면 '선언적'이라는 말이 된다.
 eclarative format : `@{}` notation을 사용하여 Data Sources 부분과 연결
@@ -121,3 +130,7 @@ Prgrammatically : `(UIcomponent).setText("...")` 와 같이 코드로 일일이 
   따라서, 프로젝트에 맞지 않는 아키텍처 구조임을 인지하게돼도, 구조 자체를 변경하기 힘들어서 비효율 적인 코드로 개발해야함
 
 - 생산속도가 떨어진다 👉 기능 하나 만들 때마다 파일이 많이 만들어 짐 👉 보일러플레이팅 코드 증가
+
+
+## 알게 된 점
+- xml 작업을 할 때 guildLine 적용을 처음 해봄
