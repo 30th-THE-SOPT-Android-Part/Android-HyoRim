@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import org.sopt.android_hyorim_30th.R
 import org.sopt.android_hyorim_30th.SecondActivity
 import org.sopt.android_hyorim_30th.databinding.ActivitySignInBinding
+import org.sopt.android_hyorim_30th.ui.signup.SignUpActivity
 import org.sopt.android_hyorim_30th.util.shortToast
 
 class SignInActivity : AppCompatActivity() {
@@ -31,9 +32,12 @@ class SignInActivity : AppCompatActivity() {
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
             shortToast(getString(R.string.login_success))
-        } else {
-            shortToast(getString(R.string.check_id_pw))
-        }
+        } else shortToast(getString(R.string.check_id_pw))
+    }
+
+    fun goToSignUp(view:View){
+        val intent =Intent(this, SignUpActivity::class.java)
+        startActivity(intent)
     }
 
 }

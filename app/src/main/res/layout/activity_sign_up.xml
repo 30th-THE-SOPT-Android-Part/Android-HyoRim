@@ -7,13 +7,13 @@
 
         <variable
             name="viewModel"
-            type="org.sopt.android_hyorim_30th.ui.signin.SignInViewModel" />
+            type="org.sopt.android_hyorim_30th.ui.signup.SignUpViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.signin.SignInActivity">
+        tools:context=".ui.signup.SignUpActivity">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_start"
@@ -29,8 +29,9 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.95" />
 
+
         <TextView
-            android:id="@+id/tv_logo"
+            android:id="@+id/tv_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
@@ -42,14 +43,33 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/name"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_up" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_name"
+            android:text="@{viewModel.userName}"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <TextView
             android:id="@+id/tv_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:text="@string/id"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/tv_logo" />
+            app:layout_constraintTop_toBottomOf="@id/et_name" />
 
         <EditText
             android:id="@+id/et_id"
@@ -88,22 +108,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:onClick="moveToHome"
-            android:text="@string/login"
+            android:text="@string/complete_sign_up"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/et_pw" />
 
-        <Button
-            android:id="@+id/btn_sign_up"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/purple_200"
-            android:onClick="goToSignUp"
-            android:text="@string/sign_up"
-            app:layout_constraintEnd_toEndOf="@id/gl_end"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
