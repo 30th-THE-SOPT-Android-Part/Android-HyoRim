@@ -1,18 +1,18 @@
 package org.sopt.android_hyorim_30th.ui.signup
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import org.sopt.android_hyorim_30th.R
-import org.sopt.android_hyorim_30th.SecondActivity
 import org.sopt.android_hyorim_30th.databinding.ActivitySignUpBinding
+import org.sopt.android_hyorim_30th.ui.signin.SignInActivity
 import org.sopt.android_hyorim_30th.util.shortToast
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
-    private val signUpViewModel : SignUpViewModel by viewModels()
+    private val signUpViewModel: SignUpViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +26,19 @@ class SignUpActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
     }
 
-    private fun backToLogin(view : View){
+    fun initSignUpCompleteBtnClick(view: View) {
         if (signUpViewModel.isInputComplete) {
-//            val intent = Intent(this, SecondActivity::class.java)
-//            startActivity(intent)
-            shortToast(getString(R.string.login_success))
-        } else shortToast(getString(R.string.check_id_pw))
+            Intent(this, SignInActivity::class.java).apply {
+                putExtra(KEY_ID, signUpViewModel.userId.value)
+                putExtra(KEY_PW, signUpViewModel.userPw.value)
+                setResult(RESULT_OK, this)
+            }
+            if (!isFinishing) finish()
+        } else shortToast(getString(R.string.malformed_data))
+    }
+
+    companion object {
+        const val KEY_ID = "id"
+        const val KEY_PW = "password"
     }
 }

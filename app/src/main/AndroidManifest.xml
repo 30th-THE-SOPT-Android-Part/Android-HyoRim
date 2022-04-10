@@ -13,7 +13,7 @@
             android:name=".ui.signup.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".ui.signin.SignInActivity"
