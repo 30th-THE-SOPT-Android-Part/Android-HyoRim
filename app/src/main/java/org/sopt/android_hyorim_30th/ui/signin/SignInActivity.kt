@@ -23,8 +23,7 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignInBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding = ActivitySignInBinding.inflate(layoutInflater).also{setContentView(it.root)}
         initViewModel()
         initActivityLauncher()
     }

@@ -3,7 +3,6 @@ package org.sopt.android_hyorim_30th.ui.home
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import org.sopt.android_hyorim_30th.R
 import org.sopt.android_hyorim_30th.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -12,8 +11,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding = ActivityHomeBinding.inflate(layoutInflater).also{setContentView(it.root)}
         initViewModel()
     }
 

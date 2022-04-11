@@ -8,7 +8,6 @@ class SignUpViewModel : ViewModel() {
     val userId = MutableLiveData("")
     val userPw = MutableLiveData("")
 
-    val isInputComplete: Boolean
-        get() = (userName.value?.isNotBlank() ?: false) && (userId.value?.isNotBlank()
-            ?: false) && (userPw.value?.isNotBlank() ?: false)
+    val isInputComplete
+        get() = !userName.value.isNullOrBlank() && !userId.value.isNullOrBlank() && !userPw.value.isNullOrBlank()
 }

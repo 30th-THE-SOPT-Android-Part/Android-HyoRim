@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 class SignInViewModel : ViewModel() {
     val userId = MutableLiveData("")
     val userPw = MutableLiveData("")
-    val isInputComplete: Boolean
-        get() = (userId.value?.isNotBlank() ?: false) && (userPw.value?.isNotBlank() ?: false)
+    val isInputComplete
+        get() = !userId.value.isNullOrBlank() && !userPw.value.isNullOrBlank()
 }
 

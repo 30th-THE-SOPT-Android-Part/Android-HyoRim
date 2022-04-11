@@ -9,12 +9,5 @@ class HomeViewModel : ViewModel() {
     val userName = MutableLiveData("루피")
     val userAge = MutableLiveData(4)
     val userMBTI = MutableLiveData("BABY")
-    val userIntroduction = MutableLiveData(setIntroductionString())
-
-    private fun setIntroductionString(): String {
-        var temp = ""
-        for (i in 0..150) temp += "군침이 싹도누!\n"
-        return temp
-    }
-
+    val userIntroduction = MutableLiveData("군침이 싹도누!\n".repeat(150))
 }
