@@ -30,9 +30,8 @@ class SignUpActivity : AppCompatActivity() {
             Intent(this, SignInActivity::class.java).apply {
                 putExtra(KEY_ID, signUpViewModel.userId.value)
                 putExtra(KEY_PW, signUpViewModel.userPw.value)
-                setResult(RESULT_OK, this)
-            }
-            if (!isFinishing) finish()
+            }.also { setResult(RESULT_OK, it) }
+            finish()
         } else shortToast(getString(R.string.malformed_data))
     }
 
