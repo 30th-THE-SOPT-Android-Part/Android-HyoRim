@@ -9,4 +9,3 @@ class SignInViewModel : ViewModel() {
     val isInputComplete
         get() = !userId.value.isNullOrBlank() && !userPw.value.isNullOrBlank()
 }
-

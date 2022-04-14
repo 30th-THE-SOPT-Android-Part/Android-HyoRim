@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import org.sopt.android_hyorim_30th.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityHomeBinding
-    private val homeViewModel : HomeViewModel by viewModels()
+    private lateinit var binding: ActivityHomeBinding
+    private val homeViewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater).also{setContentView(it.root)}
+        binding = ActivityHomeBinding.inflate(layoutInflater).also { setContentView(it.root) }
         initViewModel()
     }
 
