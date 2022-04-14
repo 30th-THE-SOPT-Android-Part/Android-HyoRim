@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Android-HyoRim-30th</string>
+    <string name="SOPT">SOPT</string>
+    <string name="id">아이디</string>
+    <string name="hint_enter_id">아이디를 입력해주세요.</string>
+    <string name="pw">비밀번호</string>
+    <string name="hint_enter_pw">비밀번호를 입력해주세요.</string>
+    <string name="login">LOGIN</string>
+    <string name="login_success">로그인 성공</string>
+    <string name="sign_up">회원가입</string>
+    <string name="check_id_pw">아이디/비밀번호를 확인해주세요</string>
+    <string name="name">이름</string>
+    <string name="hint_enter_name">이름을 입력해주세요.</string>
+    <string name="complete_sign_up">회원가입 완료</string>
+    <string name="malformed_data">입력되지 않은 정보가 있습니다</string>
+</resources>
