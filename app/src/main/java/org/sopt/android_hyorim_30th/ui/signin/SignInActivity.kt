@@ -1,8 +1,10 @@
 package org.sopt.android_hyorim_30th.ui.signin
 
 import android.app.Activity
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -59,5 +61,9 @@ class SignInActivity : AppCompatActivity() {
     fun initSignUpBtnClick(view: View) {
         val intent = Intent(this, SignUpActivity::class.java)
         signInActivityLauncher.launch(intent)
+    }
+
+    fun initSaveIdClick(view: View) {
+        Log.d(TAG, "initSaveIdClick: ")
     }
 }
