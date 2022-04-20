@@ -14,8 +14,8 @@ fun ImageView.setProfileImage(@DrawableRes uri: Int) {
 
 @BindingAdapter("app:selector")
 fun ImageView.setProfileImage(isSelected: Boolean) {
-    if (isSelected) Glide.with(this).load(R.drawable.ic_checkbox_on).into(this)
-    else Glide.with(this).load(R.drawable.ic_checkbox_off).into(this)
+    val source = if (isSelected) R.drawable.ic_checkbox_on else R.drawable.ic_checkbox_off
+    Glide.with(this).load(source).into(this)
 }
 
 @BindingAdapter("selected")
