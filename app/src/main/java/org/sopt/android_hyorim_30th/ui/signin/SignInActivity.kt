@@ -8,6 +8,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 import org.sopt.android_hyorim_30th.R
 import org.sopt.android_hyorim_30th.databinding.ActivitySignInBinding
 import org.sopt.android_hyorim_30th.ui.home.HomeActivity
@@ -16,6 +17,7 @@ import org.sopt.android_hyorim_30th.ui.signup.SignUpActivity.Companion.KEY_ID
 import org.sopt.android_hyorim_30th.ui.signup.SignUpActivity.Companion.KEY_PW
 import org.sopt.android_hyorim_30th.util.shortToast
 
+@AndroidEntryPoint
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     private val signInViewModel: SignInViewModel by viewModels()
