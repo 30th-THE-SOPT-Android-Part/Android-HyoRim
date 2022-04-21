@@ -20,7 +20,7 @@ import org.sopt.android_hyorim_30th.util.shortToast
 @AndroidEntryPoint
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
-    private val signInViewModel: SignInViewModel by viewModels()
+    private val signInViewModel by viewModels<SignInViewModel>()
     private lateinit var signInActivityLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +52,7 @@ class SignInActivity : AppCompatActivity() {
 
     fun initSignInBtnClick(view: View) {
         if (signInViewModel.isInputComplete) {
+            signInViewModel.setPreference()
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             shortToast(getString(R.string.login_success))
@@ -65,5 +66,8 @@ class SignInActivity : AppCompatActivity() {
 
     fun initSaveIdClick(view: View) {
         signInViewModel.toggleSaveId()
+        signInViewModel.isSaveId.observe(this) {
+            if (it) shortToast(getString(R.string.auto_save_id))
+        }
     }
 }
