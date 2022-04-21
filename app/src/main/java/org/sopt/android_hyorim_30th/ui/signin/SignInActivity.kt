@@ -20,7 +20,7 @@ import org.sopt.android_hyorim_30th.util.shortToast
 @AndroidEntryPoint
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
-    private val signInViewModel by viewModels<SignInViewModel>()
+    private val signInViewModel: SignInViewModel by viewModels()
     private lateinit var signInActivityLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
