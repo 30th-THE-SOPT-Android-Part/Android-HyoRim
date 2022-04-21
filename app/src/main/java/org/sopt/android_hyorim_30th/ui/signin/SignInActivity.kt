@@ -65,9 +65,9 @@ class SignInActivity : AppCompatActivity() {
         signInActivityLauncher.launch(intent)
     }
 
-    fun initSaveIdClick(view: View) {
+    fun onClickSaveId(view: View) {
         signInViewModel.toggleSaveId()
-        signInViewModel.isSaveId.observe(this) {
+        signInViewModel.isIdLoadedAuto.observe(this) {
             if (it) shortToast(getString(R.string.auto_save_id))
         }
     }

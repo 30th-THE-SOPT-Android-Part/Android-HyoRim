@@ -13,22 +13,22 @@ class SignInViewModel @Inject constructor(
 ) : ViewModel() {
     val userId = MutableLiveData("")
     val userPw = MutableLiveData("")
-    private val _isSaveId = MutableLiveData(false)
-    val isSaveId: LiveData<Boolean> = _isSaveId
+    private val _isIdLoadedAuto = MutableLiveData(false)
+    val isIdLoadedAuto: LiveData<Boolean> = _isIdLoadedAuto
     val isInputComplete
         get() = !userId.value.isNullOrBlank() && !userPw.value.isNullOrBlank()
 
     init {
         userId.value = if (preference.isAutoLogin) preference.userId else ""
-        _isSaveId.value = preference.isAutoLogin
+        _isIdLoadedAuto.value = preference.isAutoLogin
     }
 
     fun toggleSaveId() {
-        _isSaveId.value = !(_isSaveId.value ?: throw IllegalStateException())
+        _isIdLoadedAuto.value = !(_isIdLoadedAuto.value ?: throw IllegalStateException())
     }
 
     fun setPreference() {
-        _isSaveId.value?.let {
+        _isIdLoadedAuto.value?.let {
             preference.isAutoLogin = it
             if (it) preference.userId = userId.value.toString()
         }

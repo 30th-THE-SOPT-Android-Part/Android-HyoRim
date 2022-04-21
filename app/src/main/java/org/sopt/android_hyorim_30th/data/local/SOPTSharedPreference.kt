@@ -4,12 +4,10 @@ import android.content.Context
 import android.content.SharedPreferences
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
 class SOPTSharedPreference @Inject constructor(@ApplicationContext context: Context) {
 
-    var preference: SharedPreferences =
+    private val preference: SharedPreferences =
         context.getSharedPreferences(context.packageName, Context.MODE_PRIVATE)
 
     var isAutoLogin: Boolean
