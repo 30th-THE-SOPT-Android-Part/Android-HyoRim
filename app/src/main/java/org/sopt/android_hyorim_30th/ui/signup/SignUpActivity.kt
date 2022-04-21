@@ -4,19 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import org.sopt.android_hyorim_30th.R
 import org.sopt.android_hyorim_30th.databinding.ActivitySignUpBinding
+import org.sopt.android_hyorim_30th.ui.base.BaseActivity
 import org.sopt.android_hyorim_30th.ui.signin.SignInActivity
 import org.sopt.android_hyorim_30th.util.shortToast
 
-class SignUpActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySignUpBinding
+class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up) {
     private val signUpViewModel: SignUpViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignUpBinding.inflate(layoutInflater).also { setContentView(it.root) }
         initViewModel()
     }
 

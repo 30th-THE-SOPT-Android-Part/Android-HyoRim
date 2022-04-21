@@ -7,10 +7,10 @@ import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import org.sopt.android_hyorim_30th.R
 import org.sopt.android_hyorim_30th.databinding.ActivitySignInBinding
+import org.sopt.android_hyorim_30th.ui.base.BaseActivity
 import org.sopt.android_hyorim_30th.ui.home.HomeActivity
 import org.sopt.android_hyorim_30th.ui.signup.SignUpActivity
 import org.sopt.android_hyorim_30th.ui.signup.SignUpActivity.Companion.KEY_ID
@@ -18,14 +18,12 @@ import org.sopt.android_hyorim_30th.ui.signup.SignUpActivity.Companion.KEY_PW
 import org.sopt.android_hyorim_30th.util.shortToast
 
 @AndroidEntryPoint
-class SignInActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySignInBinding
+class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sign_in) {
     private val signInViewModel: SignInViewModel by viewModels()
     private lateinit var signInActivityLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignInBinding.inflate(layoutInflater).also { setContentView(it.root) }
         initViewModel()
         initActivityLauncher()
     }
