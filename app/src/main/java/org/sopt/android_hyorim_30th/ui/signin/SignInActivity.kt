@@ -40,6 +40,7 @@ class SignInActivity : AppCompatActivity() {
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
                 when (it.resultCode) {
                     Activity.RESULT_OK -> setDataFromSignUp(it.data)
+                    Activity.RESULT_CANCELED -> shortToast(getString(R.string.cancel_sign_up))
                     else -> shortToast("문제가 발생했습니다 : $it")
                 }
             }
