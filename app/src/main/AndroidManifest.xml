@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.sopt.android_hyorim_30th">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".SOPTHubApplication"
         android:allowBackup="true"
@@ -18,7 +20,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="true" />
+            android:exported="true" /><!-- Edit Configuration 이용을 위해 일시적으로 exported = true로 지정-->
         <activity
             android:name=".ui.signin.SignInActivity"
             android:exported="true">
