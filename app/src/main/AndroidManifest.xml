@@ -11,11 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidHyoRim30th">
         <activity
+            android:name=".ui.detail.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.signup.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.signin.SignInActivity"
             android:exported="true">
