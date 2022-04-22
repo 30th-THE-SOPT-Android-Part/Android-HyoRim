@@ -13,7 +13,7 @@ fun ImageView.setProfileImage(@DrawableRes uri: Int) {
 }
 
 @BindingAdapter("app:imageUrl")
-fun ImageView.setProfileImageCircle(uri: String) {
+fun ImageView.setProfileImageUrl(uri: String) {
     Glide.with(this).load(uri).into(this)
 }
 
