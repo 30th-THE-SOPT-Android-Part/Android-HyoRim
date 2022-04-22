@@ -10,6 +10,6 @@ class DetailViewModel : ViewModel() {
     val gitData: LiveData<GitFollowerData> = _gitData
 
     fun setGitData(data: GitFollowerData) {
-        _gitData.postValue(data)
+        _gitData.value = data
     }
 }
