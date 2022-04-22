@@ -29,15 +29,7 @@ class GitFollowerFragment :
     private fun initAdapter() {
         binding.rvFollower.adapter =
             GitFollowerAdapter(::onItemClick).also { gitFollowerAdapter = it }
-        gitFollowerAdapter.submitList(
-            listOf(
-                GitFollowerData(MINION1, "김효림", "내이름"),
-                GitFollowerData(MINION2, "김효람", "이렇게 불릴 때도 있음"),
-                GitFollowerData(MINION3, "비버", "닮은 동물"),
-                GitFollowerData(MINION1, "루피", "닮은 캐릭터(?)"),
-                GitFollowerData(MINION2, "리사이클러뷰 테스트", "스크롤 확인용 데이터")
-            )
-        )
+        gitFollowerAdapter.submitList(dummyData)
     }
 
     private fun onItemClick(follower: GitFollowerData) {
@@ -47,11 +39,37 @@ class GitFollowerFragment :
     }
 
     companion object {
-        const val MINION1 =
-            "https://mblogthumb-phinf.pstatic.net/20151026_131/ddazero_1445793805984ouRO8_JPEG/dave1.jpg?type=w800"
-        const val MINION2 =
-            "https://mblogthumb-phinf.pstatic.net/20151026_41/ddazero_1445794370582RDrBz_JPEG/Stuart.jpg?type=w800"
-        const val MINION3 =
-            "https://mblogthumb-phinf.pstatic.net/20151026_132/ddazero_14457954455582SYuc_JPEG/Kevin_the_minions_2015.jpg?type=w2"
+        val dummyData = mutableListOf(
+            GitFollowerData(
+                "https://mblogthumb-phinf.pstatic.net/20151026_131/ddazero_1445793805984ouRO8_JPEG/dave1.jpg?type=w800",
+                "김효림",
+                "나야나~ ".repeat(30)
+            ),
+            GitFollowerData(
+                "https://mblogthumb-phinf.pstatic.net/20151026_41/ddazero_1445794370582RDrBz_JPEG/Stuart.jpg?type=w800",
+                "이창환",
+                "맷돼지"
+            ),
+            GitFollowerData(
+                "https://mblogthumb-phinf.pstatic.net/20151026_132/ddazero_14457954455582SYuc_JPEG/Kevin_the_minions_2015.jpg?type=w2",
+                "문다빈",
+                "문콩"
+            ),
+            GitFollowerData(
+                "https://mblogthumb-phinf.pstatic.net/20151026_131/ddazero_1445793805984ouRO8_JPEG/dave1.jpg?type=w800",
+                "문명주",
+                "알미남 ".repeat(10)
+            ),
+            GitFollowerData(
+                "https://mblogthumb-phinf.pstatic.net/20151026_41/ddazero_1445794370582RDrBz_JPEG/Stuart.jpg?type=w800",
+                "조재훈",
+                "밥은 먹고 다니냐? 요즘 뭐하고 사냐? ".repeat(2)
+            ),
+            GitFollowerData(
+                "https://mblogthumb-phinf.pstatic.net/20151026_132/ddazero_14457954455582SYuc_JPEG/Kevin_the_minions_2015.jpg?type=w2",
+                "이호재",
+                "휘파람으로 화음넣기 장인 ".repeat(2)
+            )
+        )
     }
 }
