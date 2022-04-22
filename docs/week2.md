@@ -146,3 +146,63 @@ private fun onItemClick(follower: GitFollowerData) {
 
 
 
+```kotlin
+// Fragment
+
+binding.rvFollower.adapter =
+	GitFollowerAdapter(::onItemClick).also { gitFollowerAdapter = it }
+
+private fun onItemClick(follower: GitFollowerData) {
+    val intent = Intent(requireContext(), DetailActivity::class.java)
+    intent.putExtra(GIT_DATA, follower)
+    startActivity(intent)
+}
+```
+
+
+
+
+
+## 3️⃣도전과제
+
+#### 1. BaseActivity, BaseFragment 사용
+
+```kotlin
+abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val layoutRes: Int) :
+    AppCompatActivity() {
+    lateinit var binding: T
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, layoutRes)
+    }
+}
+```
+
+```kotlin
+abstract class BaseFragment<B : ViewDataBinding>(@LayoutRes private val layoutResId: Int) :
+    Fragment() {
+    private var _binding: B? = null
+    val binding: B get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        _binding = DataBindingUtil.inflate(inflater, layoutResId, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+```
+
+
+
+
+
+### 2. notifyDataSetChange의 문제점은 DiffUtil 사용
