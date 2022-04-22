@@ -30,7 +30,7 @@
             tools:src="@drawable/loopy" />
 
         <TextView
-            android:id="@+id/name_tv"
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
@@ -53,7 +53,7 @@
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/iv_profile"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/name_tv"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
             tools:text="@tools:sample/lorem/random" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
