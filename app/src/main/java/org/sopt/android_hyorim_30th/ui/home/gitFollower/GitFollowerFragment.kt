@@ -39,7 +39,7 @@ class GitFollowerFragment :
     }
 
     companion object {
-        val dummyData = mutableListOf(
+        val dummyData = listOf(
             GitFollowerData(
                 "https://mblogthumb-phinf.pstatic.net/20151026_131/ddazero_1445793805984ouRO8_JPEG/dave1.jpg?type=w800",
                 "김효림",
