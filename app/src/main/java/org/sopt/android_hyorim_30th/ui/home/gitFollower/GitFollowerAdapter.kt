@@ -34,7 +34,7 @@ class GitFollowerAdapter(
 
     private class GitFollowerComparator : DiffUtil.ItemCallback<GitFollowerData>() {
         override fun areItemsTheSame(oldItem: GitFollowerData, newItem: GitFollowerData) =
-            oldItem.photo == newItem.photo
+            oldItem.id == newItem.id
 
         override fun areContentsTheSame(oldItem: GitFollowerData, newItem: GitFollowerData) =
             oldItem == newItem
