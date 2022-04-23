@@ -12,6 +12,7 @@ import org.sopt.android_hyorim_30th.databinding.FragmentGitFollowerBinding
 import org.sopt.android_hyorim_30th.ui.base.BaseFragment
 import org.sopt.android_hyorim_30th.ui.detail.DetailActivity
 import org.sopt.android_hyorim_30th.ui.detail.DetailActivity.Companion.GIT_DATA
+import org.sopt.android_hyorim_30th.ui.home.gitFollower.adapter.GitFollowerAdapter
 
 class GitFollowerFragment :
     BaseFragment<FragmentGitFollowerBinding>(R.layout.fragment_git_follower) {

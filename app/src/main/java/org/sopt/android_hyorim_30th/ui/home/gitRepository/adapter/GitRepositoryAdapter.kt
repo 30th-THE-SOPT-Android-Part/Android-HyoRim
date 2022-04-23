@@ -1,4 +1,4 @@
-package org.sopt.android_hyorim_30th.ui.home.gitRepository
+package org.sopt.android_hyorim_30th.ui.home.gitRepository.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -36,10 +36,7 @@ class GitRepositoryAdapter(
         override fun areItemsTheSame(oldItem: GitRepositoryData, newItem: GitRepositoryData) =
             oldItem.id == newItem.id
 
-        override fun areContentsTheSame(
-            oldItem: GitRepositoryData,
-            newItem: GitRepositoryData
-        ) =
+        override fun areContentsTheSame(oldItem: GitRepositoryData, newItem: GitRepositoryData) =
             oldItem == newItem
     }
 }
