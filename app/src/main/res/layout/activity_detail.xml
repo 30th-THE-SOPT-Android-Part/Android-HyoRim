@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="org.sopt.android_hyorim_30th.ui.detail.DetailViewModel" />
+            name="followerData"
+            type="org.sopt.android_hyorim_30th.data.GitFollowerData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +23,7 @@
             android:layout_marginBottom="8dp"
             android:contentDescription="@string/profile_image"
             android:scaleType="fitXY"
-            app:imageUrl="@{viewModel.gitData.photo}"
+            app:imageUrl="@{followerData.photo}"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
-            android:text="@{viewModel.gitData.name}"
+            android:text="@{followerData.name}"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
             android:ellipsize="end"
-            android:text="@{viewModel.gitData.introduction}"
+            android:text="@{followerData.introduction}"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
