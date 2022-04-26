@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import org.sopt.android_hyorim_30th.data.GitFollowerData
 
 class GitFollowerViewModel : ViewModel() {
-    private var _follower = MutableLiveData<List<GitFollowerData?>>()
-    val follower: LiveData<List<GitFollowerData?>> = _follower
+    private var _follower = MutableLiveData<List<GitFollowerData>?>()
+    val follower: LiveData<List<GitFollowerData>?> = _follower
 
     init {
         _follower.value = listOf(

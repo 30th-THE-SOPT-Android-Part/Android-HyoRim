@@ -18,6 +18,7 @@ class GitFollowerFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         bindingViewModel()
         initAdapter()
+        initFollowerList()
     }
 
     private fun bindingViewModel() {
@@ -27,7 +28,12 @@ class GitFollowerFragment :
     private fun initAdapter() {
         binding.rvFollower.adapter =
             GitFollowerAdapter(::onItemClick).also { gitFollowerAdapter = it }
-        gitFollowerAdapter.submitList(gitFollowerViewModel.follower.value)
+    }
+
+    private fun initFollowerList() {
+        gitFollowerViewModel.follower.observe(viewLifecycleOwner) { list ->
+            if (list != null) gitFollowerAdapter.submitList(list)
+        }
     }
 
     private fun onItemClick(follower: GitFollowerData) {
