@@ -15,10 +15,10 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initViewModel()
+        bindingViewModel()
     }
 
-    private fun initViewModel() {
+    private fun bindingViewModel() {
         binding.viewModel = signUpViewModel
         binding.lifecycleOwner = this
     }

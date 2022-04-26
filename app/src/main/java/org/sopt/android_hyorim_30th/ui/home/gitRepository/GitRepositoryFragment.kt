@@ -24,11 +24,11 @@ class GitRepositoryFragment :
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         initAdapter()
-        initViewModel()
+        bindingViewModel()
         return binding.root
     }
 
-    private fun initViewModel() {
+    private fun bindingViewModel() {
         binding.lifecycleOwner = this
     }
 

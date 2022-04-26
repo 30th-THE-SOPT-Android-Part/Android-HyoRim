@@ -24,11 +24,11 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sig
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initViewModel()
+        bindingViewModel()
         initActivityLauncher()
     }
 
-    private fun initViewModel() {
+    private fun bindingViewModel() {
         binding.viewModel = signInViewModel
         binding.lifecycleOwner = this
     }

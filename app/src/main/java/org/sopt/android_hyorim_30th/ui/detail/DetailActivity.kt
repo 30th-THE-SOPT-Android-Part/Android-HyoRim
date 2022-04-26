@@ -13,7 +13,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(R.layout.activity_det
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initViewModel()
+        bindingViewModel()
         setGitData()
     }
 
@@ -22,7 +22,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(R.layout.activity_det
         detailViewModel.setGitData(intentData ?: return)
     }
 
-    private fun initViewModel() {
+    private fun bindingViewModel() {
         binding.viewModel = detailViewModel
         binding.lifecycleOwner = this
     }
