@@ -1,5 +1,7 @@
 package org.sopt.android_hyorim_30th.ui.detail
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import org.sopt.android_hyorim_30th.R
@@ -17,17 +19,25 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>(R.layout.activity_det
         setGitData()
     }
 
-    private fun setGitData() {
-        val intentData = intent.getParcelableExtra<GitFollowerData>(GIT_DATA)
-        detailViewModel.setGitData(intentData ?: return)
-    }
-
     private fun bindingViewModel() {
         binding.viewModel = detailViewModel
         binding.lifecycleOwner = this
     }
 
+    private fun setGitData() {
+        detailViewModel.setGitData(parseIntent(intent))
+    }
+
     companion object {
-        const val GIT_DATA = "GIT_DATA"
+        fun navigate(activity: Activity, followerData: GitFollowerData) {
+            activity.startActivity(
+                Intent(activity, DetailActivity::class.java).apply {
+                    putExtra("followerData", followerData)
+                }
+            )
+        }
+
+        private fun parseIntent(intent: Intent): GitFollowerData =
+            intent.getParcelableExtra("followerData") ?: throw IllegalArgumentException()
     }
 }

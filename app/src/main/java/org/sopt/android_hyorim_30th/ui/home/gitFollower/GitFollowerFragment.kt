@@ -1,6 +1,5 @@
 package org.sopt.android_hyorim_30th.ui.home.gitFollower
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +9,7 @@ import org.sopt.android_hyorim_30th.R
 import org.sopt.android_hyorim_30th.data.GitFollowerData
 import org.sopt.android_hyorim_30th.databinding.FragmentGitFollowerBinding
 import org.sopt.android_hyorim_30th.ui.base.BaseFragment
-import org.sopt.android_hyorim_30th.ui.detail.DetailActivity
-import org.sopt.android_hyorim_30th.ui.detail.DetailActivity.Companion.GIT_DATA
+import org.sopt.android_hyorim_30th.ui.detail.DetailActivity.Companion.navigate
 import org.sopt.android_hyorim_30th.ui.home.gitFollower.adapter.GitFollowerAdapter
 
 class GitFollowerFragment :
@@ -41,8 +39,6 @@ class GitFollowerFragment :
     }
 
     private fun onItemClick(follower: GitFollowerData) {
-        val intent = Intent(requireContext(), DetailActivity::class.java)
-        intent.putExtra(GIT_DATA, follower)
-        startActivity(intent)
+        navigate(requireActivity(), follower)
     }
 }
