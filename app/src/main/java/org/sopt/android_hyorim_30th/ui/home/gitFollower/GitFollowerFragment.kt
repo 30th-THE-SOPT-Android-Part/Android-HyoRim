@@ -1,9 +1,7 @@
 package org.sopt.android_hyorim_30th.ui.home.gitFollower
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import org.sopt.android_hyorim_30th.R
 import org.sopt.android_hyorim_30th.data.GitFollowerData
@@ -17,15 +15,9 @@ class GitFollowerFragment :
     private lateinit var gitFollowerAdapter: GitFollowerAdapter
     private val gitFollowerViewModel: GitFollowerViewModel by viewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        super.onCreateView(inflater, container, savedInstanceState)
-        initAdapter()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         bindingViewModel()
-        return binding.root
+        initAdapter()
     }
 
     private fun bindingViewModel() {
