@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="GitFollowerData"
+            type="org.sopt.android_hyorim_30th.data.GitFollowerData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/profile_image"
+            app:imageUrl="@{GitFollowerData.photo}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/loopy" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="1dp"
+            android:text="@{GitFollowerData.name}"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintTop_toTopOf="@+id/iv_profile"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/tv_introduction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{GitFollowerData.introduction}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/iv_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            tools:text="@tools:sample/lorem/random" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

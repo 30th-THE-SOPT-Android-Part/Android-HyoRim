@@ -1,19 +1,23 @@
 package org.sopt.android_hyorim_30th.ui.home
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import org.sopt.android_hyorim_30th.R
+import org.sopt.android_hyorim_30th.data.type.GitViewType
 
 class HomeViewModel : ViewModel() {
-    private val _profileImage = MutableLiveData(R.drawable.loopy)
-    val profileImage: LiveData<Int> = _profileImage
-    private val _userName = MutableLiveData("루피")
-    val userName: LiveData<String> = _userName
-    private val _userAge = MutableLiveData(4)
-    val userAge: LiveData<Int> = _userAge
-    private val _userMBTI = MutableLiveData("BABY")
-    val userMBTI: LiveData<String> = _userMBTI
-    private val _userIntroduction = MutableLiveData("군침이 싹도누!\n".repeat(150))
-    val userIntroduction: LiveData<String> = _userIntroduction
+    val profileImage = R.drawable.loopy
+    val userName = "루피"
+    val userAge = 4
+    val userMBTI = "BABY"
+    val userIntroduction = "군침이 싹도누 🙃"
+    var selectedFragment = MutableLiveData(GitViewType.GIT_FOLLOWER)
+
+    fun onClickFollowerBtn() {
+        selectedFragment.value = GitViewType.GIT_FOLLOWER
+    }
+
+    fun onClickRepositoryBtn() {
+        selectedFragment.value = GitViewType.GIT_REPOSITORY
+    }
 }
