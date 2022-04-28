@@ -16,13 +16,9 @@ class GitRepositoryFragment :
     private val gitRepositoryViewModel: GitRepositoryViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        bindingViewModel()
+        binding.lifecycleOwner = this
         initAdapter()
         initRepositoryList()
-    }
-
-    private fun bindingViewModel() {
-        binding.lifecycleOwner = this
     }
 
     private fun initAdapter() {

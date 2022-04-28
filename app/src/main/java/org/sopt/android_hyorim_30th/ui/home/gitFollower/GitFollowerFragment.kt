@@ -16,13 +16,9 @@ class GitFollowerFragment :
     private val gitFollowerViewModel: GitFollowerViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        bindingViewModel()
+        binding.lifecycleOwner = this
         initAdapter()
         initFollowerList()
-    }
-
-    private fun bindingViewModel() {
-        binding.lifecycleOwner = this
     }
 
     private fun initAdapter() {

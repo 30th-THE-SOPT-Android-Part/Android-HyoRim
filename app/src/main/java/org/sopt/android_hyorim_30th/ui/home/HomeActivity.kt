@@ -19,14 +19,10 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingViewModel()
-        setDefaultFragment()
-        setSelectedFragment()
-    }
-
-    private fun bindingViewModel() {
         binding.viewModel = homeViewModel
         binding.lifecycleOwner = this
+        setDefaultFragment()
+        setSelectedFragment()
     }
 
     private fun setDefaultFragment() {
