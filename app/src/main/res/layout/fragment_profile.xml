@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -23,7 +23,9 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/gray_status_bar"
+                android:paddingBottom="30dp">
 
                 <ImageView
                     android:id="@+id/profile_photo"
@@ -42,12 +44,12 @@
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="80dp"
                     android:layout_marginTop="20dp"
-                    android:text="@{`이름 : ` + viewModel.userName}"
+                    android:text="@{viewModel.userName}"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/profile_photo"
+                    app:layout_constraintStart_toStartOf="@id/profile_photo"
                     app:layout_constraintTop_toBottomOf="@+id/profile_photo"
                     tools:text="이름" />
 
@@ -56,9 +58,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@{`나이    ` +  String.valueOf(viewModel.userAge)}"
+                    android:text="@{ String.valueOf(viewModel.userAge)+`살`}"
                     android:textColor="@color/black"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/tv_name"
                     app:layout_constraintStart_toStartOf="@id/tv_name"
                     app:layout_constraintTop_toBottomOf="@+id/tv_name"
                     tools:text="나이" />
@@ -68,9 +71,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@{`MBTI    ` + viewModel.userMBTI}"
+                    android:text="@{`MBTI는 ` + viewModel.userMBTI}"
                     android:textColor="@color/black"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/tv_age"
                     app:layout_constraintStart_toStartOf="@id/tv_age"
                     app:layout_constraintTop_toBottomOf="@+id/tv_age"
                     tools:text="MBTI" />
@@ -86,6 +90,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/tv_mbti"
                     app:layout_constraintStart_toStartOf="@id/tv_mbti"
                     app:layout_constraintTop_toBottomOf="@+id/tv_mbti"
                     tools:text="자기소개" />
@@ -94,35 +99,41 @@
 
         </ScrollView>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_follower"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:backgroundTint="@color/purple_200"
+            android:background="@drawable/selector_profile_button"
             android:onClick="@{()->viewModel.onClickFollowerBtn()}"
             android:paddingHorizontal="30dp"
             android:paddingVertical="15dp"
             android:text="@string/follower_list"
+            android:textColor="@drawable/selector_profile_text"
             app:layout_constraintEnd_toStartOf="@id/btn_repository"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nestedScrollView" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_repository"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/purple_500"
+
+            android:layout_marginEnd="11dp"
+            android:background="@drawable/selector_profile_button"
             android:onClick="@{()->viewModel.onClickRepositoryBtn()}"
             android:paddingHorizontal="30dp"
             android:paddingVertical="15dp"
             android:text="@string/repository_list"
+            android:textColor="@drawable/selector_profile_text"
             app:layout_constraintBottom_toBottomOf="@id/btn_follower"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btn_follower"
             app:layout_constraintTop_toTopOf="@id/btn_follower" />
+
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/container"

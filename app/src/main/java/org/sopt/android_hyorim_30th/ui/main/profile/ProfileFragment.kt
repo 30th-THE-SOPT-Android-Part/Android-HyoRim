@@ -26,16 +26,28 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
 
     private fun setDefaultFragment() {
         setFragmentWith<GitFollowerFragment>()
+        binding.btnFollower.isSelected = true
     }
 
     private fun setSelectedFragment() {
         mainViewModel.selectedFragment.observe(requireActivity()) {
             when (it) {
-                GitViewType.GIT_FOLLOWER -> setFragmentWith<GitFollowerFragment>()
-                GitViewType.GIT_REPOSITORY -> setFragmentWith<GitRepositoryFragment>()
+                GitViewType.GIT_FOLLOWER -> {
+                    setFragmentWith<GitFollowerFragment>()
+                    toggleBtn()
+                }
+                GitViewType.GIT_REPOSITORY -> {
+                    setFragmentWith<GitRepositoryFragment>()
+                    toggleBtn()
+                }
                 else -> throw IllegalArgumentException()
             }
         }
+    }
+
+    private fun toggleBtn() {
+        binding.btnFollower.isSelected = !binding.btnFollower.isSelected
+        binding.btnRepository.isSelected = !binding.btnRepository.isSelected
     }
 
     private inline fun <reified T : Fragment> setFragmentWith() {
