@@ -62,7 +62,6 @@
             android:paddingStart="16dp"
             android:text="@={viewModel.userId}"
             android:textAppearance="@style/section_h1"
-            android:textCursorDrawable="@drawable/rectangle_cursor_purple"
             android:theme="@style/PurpleEditTextStyle"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
