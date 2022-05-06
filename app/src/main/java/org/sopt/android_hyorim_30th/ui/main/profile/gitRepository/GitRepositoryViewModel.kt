@@ -1,4 +1,4 @@
-package org.sopt.android_hyorim_30th.ui.main.gitRepository
+package org.sopt.android_hyorim_30th.ui.main.profile.gitRepository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

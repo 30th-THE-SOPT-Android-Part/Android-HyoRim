@@ -10,8 +10,8 @@ import org.sopt.android_hyorim_30th.R
 import org.sopt.android_hyorim_30th.data.type.GitViewType
 import org.sopt.android_hyorim_30th.databinding.ActivityMainBinding
 import org.sopt.android_hyorim_30th.ui.base.BaseActivity
-import org.sopt.android_hyorim_30th.ui.main.gitFollower.GitFollowerFragment
-import org.sopt.android_hyorim_30th.ui.main.gitRepository.GitRepositoryFragment
+import org.sopt.android_hyorim_30th.ui.main.profile.gitFollower.GitFollowerFragment
+import org.sopt.android_hyorim_30th.ui.main.profile.gitRepository.GitRepositoryFragment
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {

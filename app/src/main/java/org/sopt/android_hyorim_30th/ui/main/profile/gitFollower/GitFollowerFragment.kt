@@ -1,4 +1,4 @@
-package org.sopt.android_hyorim_30th.ui.main.gitFollower
+package org.sopt.android_hyorim_30th.ui.main.profile.gitFollower
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,7 @@ import org.sopt.android_hyorim_30th.data.GitFollowerData
 import org.sopt.android_hyorim_30th.databinding.FragmentGitFollowerBinding
 import org.sopt.android_hyorim_30th.ui.base.BaseFragment
 import org.sopt.android_hyorim_30th.ui.detail.DetailActivity.Companion.navigate
-import org.sopt.android_hyorim_30th.ui.main.gitFollower.adapter.GitFollowerAdapter
+import org.sopt.android_hyorim_30th.ui.main.profile.gitFollower.adapter.GitFollowerAdapter
 
 class GitFollowerFragment :
     BaseFragment<FragmentGitFollowerBinding>(R.layout.fragment_git_follower) {
