@@ -15,4 +15,12 @@
         <!-- Customize your theme here. -->
         <item name="android:includeFontPadding">false</item>
     </style>
+
+    <style name="PurpleEditTextStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlActivated">@color/purple_main</item>
+        <item name="colorControlNormal">@color/purple_main</item>
+        <item name="colorControlHighlight">@color/purple_main</item>
+        <item name="colorAccent">@color/purple_main</item>
+        <item name="android:textCursorDrawable">@drawable/rectangle_cursor_purple</item>
+    </style>
 </resources>
