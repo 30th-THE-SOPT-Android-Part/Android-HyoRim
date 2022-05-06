@@ -8,4 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray_status_bar">#F5F5F5</color>
+    <color name="purple_main">#8040ff</color>
+    <color name="purple_sub">#bc9aff</color>
+    <color name="grey_0">#f6f5f9</color>
+    <color name="grey_1">#efefef</color>
+    <color name="purple_sub_2">#faf8ff</color>
 </resources>
