@@ -28,6 +28,18 @@
                 android:paddingBottom="30dp">
 
                 <ImageView
+                    android:id="@+id/ic_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/ic_setting"
+                    android:backgroundTint="@color/grey_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
                     android:id="@+id/profile_photo"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -38,7 +50,8 @@
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/tv_name"
