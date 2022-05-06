@@ -7,13 +7,13 @@
 
         <variable
             name="viewModel"
-            type="org.sopt.android_hyorim_30th.ui.home.HomeViewModel" />
+            type="org.sopt.android_hyorim_30th.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.HomeActivity">
+        tools:context=".ui.main.MainActivity">
 
         <ScrollView
             android:id="@+id/nestedScrollView"

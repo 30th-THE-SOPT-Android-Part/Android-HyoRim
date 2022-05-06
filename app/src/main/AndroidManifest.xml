@@ -19,7 +19,7 @@
             android:name=".ui.signup.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.HomeActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true" /><!-- Edit Configuration 이용을 위해 일시적으로 exported = true로 지정-->
         <activity
             android:name=".ui.signin.SignInActivity"

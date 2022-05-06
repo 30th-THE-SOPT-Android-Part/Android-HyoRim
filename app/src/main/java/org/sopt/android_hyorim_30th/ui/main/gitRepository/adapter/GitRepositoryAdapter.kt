@@ -1,4 +1,4 @@
-package org.sopt.android_hyorim_30th.ui.home.gitRepository.adapter
+package org.sopt.android_hyorim_30th.ui.main.gitRepository.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

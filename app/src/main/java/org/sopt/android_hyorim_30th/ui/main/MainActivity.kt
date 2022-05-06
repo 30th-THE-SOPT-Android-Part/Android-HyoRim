@@ -1,4 +1,4 @@
-package org.sopt.android_hyorim_30th.ui.home
+package org.sopt.android_hyorim_30th.ui.main
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -8,18 +8,18 @@ import androidx.fragment.app.replace
 import dagger.hilt.android.AndroidEntryPoint
 import org.sopt.android_hyorim_30th.R
 import org.sopt.android_hyorim_30th.data.type.GitViewType
-import org.sopt.android_hyorim_30th.databinding.ActivityHomeBinding
+import org.sopt.android_hyorim_30th.databinding.ActivityMainBinding
 import org.sopt.android_hyorim_30th.ui.base.BaseActivity
-import org.sopt.android_hyorim_30th.ui.home.gitFollower.GitFollowerFragment
-import org.sopt.android_hyorim_30th.ui.home.gitRepository.GitRepositoryFragment
+import org.sopt.android_hyorim_30th.ui.main.gitFollower.GitFollowerFragment
+import org.sopt.android_hyorim_30th.ui.main.gitRepository.GitRepositoryFragment
 
 @AndroidEntryPoint
-class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
-    private val homeViewModel: HomeViewModel by viewModels()
+class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.viewModel = homeViewModel
+        binding.viewModel = mainViewModel
         binding.lifecycleOwner = this
         setDefaultFragment()
         setSelectedFragment()
@@ -30,7 +30,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
     }
 
     private fun setSelectedFragment() {
-        homeViewModel.selectedFragment.observe(this) {
+        mainViewModel.selectedFragment.observe(this) {
             when (it) {
                 GitViewType.GIT_FOLLOWER -> setFragmentWith<GitFollowerFragment>()
                 GitViewType.GIT_REPOSITORY -> setFragmentWith<GitRepositoryFragment>()
