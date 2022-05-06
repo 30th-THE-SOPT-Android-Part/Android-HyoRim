@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_profile"
+        android:checked="true"
+        android:icon="@drawable/ic_person"
+        android:title="@string/profile" />
+
+    <item
+        android:id="@+id/menu_home"
+        android:checked="false"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/menu_camera"
+        android:checked="false"
+        android:icon="@drawable/ic_camera"
+        android:title="@string/camera" />
+</menu>

@@ -12,22 +12,21 @@
             android:id="@+id/vp_main"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom_nav"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
-        <!--            android:id="@+id/bnv_sample"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:theme="@style/Widget.BottomNavigationView"-->
-        <!--            app:itemIconTint="@color/selector_bottom_navi"-->
-        <!--            app:itemRippleColor="#FFFFFF"-->
-        <!--            app:itemTextColor="@color/selector_bottom_navi"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:menu="@menu/menu_sample" />-->
-
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            app:itemIconTint="@color/selector_bottom_navi"
+            app:itemRippleColor="@android:color/transparent"
+            app:itemTextColor="@color/selector_bottom_navi"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/menu_main" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

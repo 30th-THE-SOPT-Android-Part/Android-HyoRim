@@ -19,4 +19,7 @@
     <string name="follower_list">팔로워 목록</string>
     <string name="repository_list">레파지토리 목록</string>
     <string name="profile_image">profile image</string>
+    <string name="profile">프로필</string>
+    <string name="camera">카메라</string>
+    <string name="home">홈</string>
 </resources>
