@@ -9,7 +9,7 @@ import org.sopt.android_hyorim_30th.R
 
 @BindingAdapter("app:imageUri")
 fun ImageView.setProfileImage(@DrawableRes uri: Int) {
-    Glide.with(this).load(uri).into(this)
+    Glide.with(this).load(uri).circleCrop().into(this)
 }
 
 @BindingAdapter("app:imageUrl")
