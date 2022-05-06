@@ -22,11 +22,11 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
         binding.lifecycleOwner = this
         setDefaultFragment()
         setSelectedFragment()
+        setButtonSelectedState(isFollowerSelected = true, isRepoSelected = false)
     }
 
     private fun setDefaultFragment() {
         setFragmentWith<GitFollowerFragment>()
-        binding.btnFollower.isSelected = true
     }
 
     private fun setSelectedFragment() {
@@ -34,20 +34,20 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
             when (it) {
                 GitViewType.GIT_FOLLOWER -> {
                     setFragmentWith<GitFollowerFragment>()
-                    toggleBtn()
+                    setButtonSelectedState(isFollowerSelected = true, isRepoSelected = false)
                 }
                 GitViewType.GIT_REPOSITORY -> {
                     setFragmentWith<GitRepositoryFragment>()
-                    toggleBtn()
+                    setButtonSelectedState(isFollowerSelected = false, isRepoSelected = true)
                 }
                 else -> throw IllegalArgumentException()
             }
         }
     }
 
-    private fun toggleBtn() {
-        binding.btnFollower.isSelected = !binding.btnFollower.isSelected
-        binding.btnRepository.isSelected = !binding.btnRepository.isSelected
+    private fun setButtonSelectedState(isFollowerSelected: Boolean, isRepoSelected: Boolean) {
+        binding.btnFollower.isSelected = isFollowerSelected
+        binding.btnRepository.isSelected = isRepoSelected
     }
 
     private inline fun <reified T : Fragment> setFragmentWith() {

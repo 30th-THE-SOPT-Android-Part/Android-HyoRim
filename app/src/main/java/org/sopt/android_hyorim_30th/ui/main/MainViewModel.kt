@@ -11,7 +11,7 @@ class MainViewModel : ViewModel() {
     val userAge = 4
     val userMBTI = "BABY"
     val userIntroduction = "나는야 잔망루피! 군침이 싹도누 🙃"
-    var selectedFragment = MutableLiveData(GitViewType.GIT_FOLLOWER)
+    var selectedFragment = MutableLiveData<GitViewType>()
 
     fun onClickFollowerBtn() {
         selectedFragment.value = GitViewType.GIT_FOLLOWER
