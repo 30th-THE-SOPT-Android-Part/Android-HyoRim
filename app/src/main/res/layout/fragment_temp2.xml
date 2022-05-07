@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_3"
+    android:background="@color/gray_4"
     tools:context=".ui.main.home.TempFragment2">
 
 
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/noto_sans_kr_medium"
-        android:text="준비중입니다2"
+        android:text="@string/service_preparing"
         android:textColor="@color/black_2"
         android:textSize="21sp"
         app:layout_constraintBottom_toBottomOf="parent"

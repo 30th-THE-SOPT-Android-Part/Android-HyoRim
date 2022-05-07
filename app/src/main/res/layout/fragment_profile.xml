@@ -24,8 +24,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/gray_status_bar"
-                android:paddingBottom="30dp">
+                android:background="@color/gray_4"
+                android:paddingBottom="15dp">
 
                 <ImageView
                     android:id="@+id/ic_setting"

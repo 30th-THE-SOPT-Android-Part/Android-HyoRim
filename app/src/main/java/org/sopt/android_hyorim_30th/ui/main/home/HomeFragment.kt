@@ -8,7 +8,7 @@ import org.sopt.android_hyorim_30th.databinding.FragmentHomeBinding
 import org.sopt.android_hyorim_30th.ui.base.BaseFragment
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
-    private lateinit var gitTabViewPagerAdapter: GitTabViewPagerAdapter
+    private lateinit var gitTabHostVPAdapter: GitTabViewPagerAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.lifecycleOwner = this
         initAdapter()
@@ -17,18 +17,18 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     }
 
     private fun initAdapter() {
-        binding.vpFollow.adapter =
-            GitTabViewPagerAdapter(this).also { gitTabViewPagerAdapter = it }
+        binding.vpHome.adapter =
+            GitTabViewPagerAdapter(this).also { gitTabHostVPAdapter = it }
     }
 
     private fun setViewPagerFragment() {
-        gitTabViewPagerAdapter.fragmentList = listOf(TempFragment1(), TempFragment2())
+        gitTabHostVPAdapter.fragmentList = listOf(TempFragment1(), TempFragment2())
     }
 
     private fun initTabLayout() {
-        val tabLabel = listOf("팔로잉", "팔로워")
+        val tabLabel = listOf(getString(R.string.following), getString(R.string.follower))
 
-        TabLayoutMediator(binding.tlFollow, binding.vpFollow) { tab, position ->
+        TabLayoutMediator(binding.tlHome, binding.vpHome) { tab, position ->
             tab.text = tabLabel[position]
         }.attach()
     }

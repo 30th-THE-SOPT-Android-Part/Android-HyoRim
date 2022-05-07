@@ -23,7 +23,8 @@
     <string name="camera">카메라</string>
     <string name="home">홈</string>
     <string name="github">GitHub</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="append_img">사진을 첨부해 주세요</string>
+    <string name="service_preparing">준비중입니다</string>
+    <string name="following">팔로잉</string>
+    <string name="follower">팔로워</string>
 </resources>
