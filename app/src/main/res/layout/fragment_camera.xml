@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="org.sopt.android_hyorim_30th.ui.main.MainViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,6 +22,7 @@
             android:layout_height="200dp"
             android:background="@color/grey_1"
             android:scaleType="fitXY"
+            app:galleryUri="@{viewModel.imageFromGallery}"
             app:layout_constraintBottom_toTopOf="@id/tv_append"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,16 +43,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_from_gallery" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_append"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="60dp"
-            android:backgroundTint="@color/purple_main"
+            android:background="@drawable/rectangle_fill_purple_main_radius_5"
             android:padding="12dp"
-            android:text="첨부하기"
+            android:text="@string/append"
             android:textAppearance="@style/header_h1"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
