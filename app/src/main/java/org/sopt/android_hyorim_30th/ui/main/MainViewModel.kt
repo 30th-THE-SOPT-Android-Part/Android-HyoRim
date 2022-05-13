@@ -17,12 +17,8 @@ class MainViewModel : ViewModel() {
     var imageFromGallery = MutableLiveData<Uri>()
         private set
 
-    fun onClickFollowerBtn() {
-        selectedFragment.value = GitViewType.GIT_FOLLOWER
-    }
-
-    fun onClickRepositoryBtn() {
-        selectedFragment.value = GitViewType.GIT_REPOSITORY
+    fun setSelectedFragment(gitViewType: GitViewType) {
+        selectedFragment.value = gitViewType
     }
 
     fun setImageFromGallery(uri: Uri) {
