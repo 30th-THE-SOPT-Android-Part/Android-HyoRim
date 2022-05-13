@@ -36,18 +36,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:text="@string/sign_up"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:textAppearance="@style/header_h0"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="55dp"
             android:text="@string/name"
+            android:textAppearance="@style/header_h1"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/tv_sign_up" />
 
@@ -55,11 +54,18 @@
             android:id="@+id/et_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/selector_edittext"
             android:hint="@string/hint_enter_name"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
             android:text="@={viewModel.userName}"
+            android:textAppearance="@style/section_h1"
+            android:theme="@style/PurpleEditTextStyle"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            tools:ignore="RtlSymmetry" />
 
         <TextView
             android:id="@+id/tv_id"
@@ -67,6 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="@string/id"
+            android:textAppearance="@style/header_h1"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/et_name" />
@@ -75,11 +82,18 @@
             android:id="@+id/et_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/selector_edittext"
             android:hint="@string/hint_enter_id"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
             android:text="@={viewModel.userId}"
+            android:textAppearance="@style/section_h1"
+            android:theme="@style/PurpleEditTextStyle"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/tv_id" />
+            app:layout_constraintTop_toBottomOf="@id/tv_id"
+            tools:ignore="RtlSymmetry" />
 
         <TextView
             android:id="@+id/tv_pw"
@@ -87,6 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="@string/pw"
+            android:textAppearance="@style/header_h1"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/et_id" />
@@ -95,20 +110,30 @@
             android:id="@+id/et_pw"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/selector_edittext"
             android:hint="@string/hint_enter_pw"
             android:inputType="textPassword"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
             android:text="@={viewModel.userPw}"
+            android:textAppearance="@style/section_h1"
+            android:theme="@style/PurpleEditTextStyle"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/tv_pw" />
+            app:layout_constraintTop_toBottomOf="@id/tv_pw"
+            tools:ignore="RtlSymmetry" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_login"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="62dp"
+            android:background="@drawable/rectangle_fill_purple_main_radius_5"
             android:onClick="initSignUpCompleteBtnClick"
             android:text="@string/complete_sign_up"
+            android:textAppearance="@style/section_h3"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/et_pw" />

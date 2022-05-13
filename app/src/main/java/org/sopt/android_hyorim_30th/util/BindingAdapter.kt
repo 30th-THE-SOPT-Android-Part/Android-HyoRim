@@ -1,5 +1,6 @@
 package org.sopt.android_hyorim_30th.util
 
+import android.net.Uri
 import android.view.View
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
@@ -9,7 +10,7 @@ import org.sopt.android_hyorim_30th.R
 
 @BindingAdapter("app:imageUri")
 fun ImageView.setProfileImage(@DrawableRes uri: Int) {
-    Glide.with(this).load(uri).into(this)
+    Glide.with(this).load(uri).circleCrop().into(this)
 }
 
 @BindingAdapter("app:imageUrl")
@@ -26,4 +27,12 @@ fun ImageView.setProfileImage(isSelected: Boolean) {
 @BindingAdapter("selected")
 fun View.setSelectedBinding(isSelected: Boolean) {
     this.isSelected = isSelected
+}
+
+@BindingAdapter("galleryUri")
+fun ImageView.galleryUri(url: Uri?) {
+    Glide.with(context)
+        .load(url)
+        .error(R.drawable.rectangle_fill_purple_sub_radius_5)
+        .into(this)
 }

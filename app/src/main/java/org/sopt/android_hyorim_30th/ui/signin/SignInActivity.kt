@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.sopt.android_hyorim_30th.R
 import org.sopt.android_hyorim_30th.databinding.ActivitySignInBinding
 import org.sopt.android_hyorim_30th.ui.base.BaseActivity
-import org.sopt.android_hyorim_30th.ui.home.HomeActivity
+import org.sopt.android_hyorim_30th.ui.main.MainActivity
 import org.sopt.android_hyorim_30th.ui.signup.SignUpActivity
 import org.sopt.android_hyorim_30th.ui.signup.SignUpActivity.Companion.KEY_ID
 import org.sopt.android_hyorim_30th.ui.signup.SignUpActivity.Companion.KEY_PW
@@ -52,7 +52,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sig
     fun initSignInBtnClick(view: View) {
         if (signInViewModel.isInputComplete) {
             signInViewModel.setPreference()
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             shortToast(getString(R.string.login_success))
         } else shortToast(getString(R.string.check_id_pw))

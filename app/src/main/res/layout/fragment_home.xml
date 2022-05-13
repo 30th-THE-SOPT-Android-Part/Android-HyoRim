@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.home.HomeFragment">
+
+        <ImageView
+            android:id="@+id/iv_github"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/img_github"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_github"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="@string/github"
+            android:textAppearance="@style/header_h2"
+            android:textColor="@color/black_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_github" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            app:layout_constraintBottom_toTopOf="@id/nsh_home"
+            app:layout_constraintTop_toBottomOf="@id/tv_github"
+            app:tabIndicatorColor="@color/purple_main"
+            app:tabRippleColor="@color/white"
+            app:tabSelectedTextColor="@color/purple_main"
+            app:tabTextAppearance="@style/section_h9" />
+
+        <org.sopt.android_hyorim_30th.util.NestedScrollableHost
+            android:id="@+id/nsh_home"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_home">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+
+        </org.sopt.android_hyorim_30th.util.NestedScrollableHost>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
